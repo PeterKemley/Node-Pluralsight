@@ -9,7 +9,7 @@
     "share": "lt --port 3000",
     "lint": "esw webpack.config.* src buildScripts --color",
     "lint:watch": "npm run lint -- --watch",
-    "test": "mocha --reporter progess buildScripts/testSetup.js \"src/**/*.test.js\""
+    "test": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\""
   },
   "author": "Peter Kemley",
   "license": "MIT",
