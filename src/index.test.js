@@ -10,11 +10,11 @@ describe('our first test', () => {
 });
 
 describe('index.html', () => {
-  it('should say hello', (done) => { //Done is making this test Asynchronous which means because it callsback it makes the test work
+  it('should have a h1 that says Users', (done) => { //Done is making this test Asynchronous which means because it callsback it makes the test work
     const index = fs.readFileSync('./src/index.html', "utf-8");
     jsdom.env(index, function (err, window) {
     const h1 = window.document.getElementsByTagName('h1')[0];
-    expect(h1.innerHTML).to.equal("!");//why does changing this not affect the test passing#?
+    expect(h1.innerHTML).to.equal("Users");//why does changing this not affect the test passing#?
       done();
     window.close();
     });
