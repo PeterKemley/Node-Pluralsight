@@ -14,7 +14,7 @@ describe('index.html', () => {
     const index = fs.readFileSync('./src/index.html', "utf-8");
     jsdom.env(index, function (err, window) {
     const h1 = window.document.getElementsByTagName('h1')[0];
-    expect(h1.innerHTML).to.equal("!11");//why does changing this not affect the test passing#?
+    expect(h1.innerHTML).to.equal("!");//why does changing this not affect the test passing#?
       done();
     window.close();
     });
