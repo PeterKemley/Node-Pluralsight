@@ -8,16 +8,18 @@ export default {
   debug: true,
   devtool: 'source-map',
   noInfo: false,
-  entry: [
-    path.resolve(__dirname, 'src/index')
-  ],
+  entry: {
+    vendor: path.resolve(__dirname, 'src/index'),
+    main: path.resolve(__dirname, 'src/index')
+  },
   target: 'web',
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
-    filename: '[bundle].[chunkhash].js'
+    filename: '[name].[chunkhash].js'
   },
   plugins:[
+    new webpack.optimize.CommonsChunkPlugin({name: 'vendor'}),
   // Generate an external css file with a hash in the filename
   new ExtractTextPlugin('[name].[contenthash].css'),
     //Plugin used for Cache Busting
